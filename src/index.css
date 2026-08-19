@@ -1,0 +1,56 @@
+/* ── Design tokens ───────────────────────────────────────────────────────── */
+:root {
+  --bg:          #06090f;
+  --surface:     #0c1220;
+  --cyan:        #00e5ff;
+  --violet:      #7000ff;
+  --border:      rgba(0, 229, 255, 0.18);
+  --border-bright: rgba(0, 229, 255, 0.55);
+  --fill:        rgba(0, 229, 255, 0.05);
+  --glow-cyan:   rgba(0, 229, 255, 0.22);
+  --text:        rgba(180, 225, 255, 0.82);
+  --text-bright: #e8f6ff;
+  --text-dim:    rgba(90, 150, 200, 0.45);
+  --font-mono:   'IBM Plex Mono', ui-monospace, Consolas, 'Courier New', monospace;
+  --stroke:      1px;
+  --size-hud:    0.5625rem;   /* 9px  */
+  --size-xs:     0.625rem;    /* 10px */
+  --size-sm:     0.75rem;     /* 12px */
+  --size-base:   0.875rem;    /* 14px */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --tracking-wide: 0.08em;
+  --tracking-hud:  0.15em;
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-bold:   700;
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background:  var(--bg);
+  color:       var(--text);
+  font-family: var(--font-mono);
+  font-size:   var(--size-sm);
+  min-height:  100svh;
+  overflow-x:  hidden;
+}
+
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button {
+  cursor:      pointer;
+  font-family: var(--font-mono);
+  font-size:   var(--size-xs);
+}

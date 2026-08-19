@@ -1,0 +1,105 @@
+/* ── App shell ───────────────────────────────────────────────────────────── */
+
+.app {
+  display:        flex;
+  flex-direction: column;
+  min-height:     100svh;
+  max-width:      900px;
+  margin:         0 auto;
+  padding:        var(--sp-4);
+  gap:            0;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+
+.app-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  flex-wrap:       wrap;
+  gap:             var(--sp-3);
+  padding:         var(--sp-3) var(--sp-4);
+  background:      var(--surface);
+  border:          var(--stroke) solid var(--border);
+  border-bottom:   none;
+}
+
+.app-title-group {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-2);
+}
+
+.app-dot {
+  width:         6px;
+  height:        6px;
+  border-radius: 50%;
+  background:    var(--cyan);
+  box-shadow:    0 0 6px var(--glow-cyan);
+  animation:     dot-pulse 2s steps(1) infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.2; }
+}
+
+.app-title {
+  font-size:      var(--size-sm);
+  font-weight:    var(--weight-normal);
+  letter-spacing: var(--tracking-hud);
+  text-transform: uppercase;
+  color:          var(--text-bright);
+}
+
+/* ── HUD readouts ────────────────────────────────────────────────────────── */
+
+.app-readouts {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-4);
+  flex-wrap:   wrap;
+}
+
+.readout {
+  display:    flex;
+  flex-direction: column;
+  gap:        1px;
+}
+
+.readout__label {
+  font-size:      var(--size-hud);
+  letter-spacing: var(--tracking-hud);
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  line-height:    1;
+}
+
+.readout__value {
+  font-size:  var(--size-xs);
+  color:      var(--cyan);
+  line-height: 1.2;
+}
+
+/* ── Grid area ───────────────────────────────────────────────────────────── */
+
+.app-grid {
+  flex: 1;
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .app-dot { animation: none; opacity: 1; }
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .app {
+    padding: var(--sp-2);
+  }
+  .app-readouts {
+    gap: var(--sp-3);
+  }
+}

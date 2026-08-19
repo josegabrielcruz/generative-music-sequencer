@@ -1,0 +1,13 @@
+.grid-wrapper {
+  width: 100%;
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  background: #06090f;
+}
+
+.grid-canvas {
+  display: block;
+  width:   100%;
+  cursor:  crosshair;
+  /* height is set dynamically by the RAF loop */
+  touch-action: none;  /* prevent scroll-interfering with cell toggle */
+}

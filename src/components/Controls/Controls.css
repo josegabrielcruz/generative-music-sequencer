@@ -1,0 +1,167 @@
+.controls {
+  display:        flex;
+  flex-direction: column;
+  gap:            var(--sp-2);
+  padding:        var(--sp-3) var(--sp-4);
+  background:     var(--surface);
+  border:         var(--stroke) solid var(--border);
+  border-top:     none;
+}
+
+/* ── Row ─────────────────────────────────────────────────────────────── */
+
+.ctrl-row {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-4);
+  flex-wrap:   wrap;
+}
+
+.ctrl-row--transport {
+  padding-bottom: var(--sp-2);
+  border-bottom:  var(--stroke) solid var(--border);
+}
+
+.ctrl-row--seeds {
+  padding-top: var(--sp-1);
+  border-top:  var(--stroke) solid var(--border);
+  gap:         var(--sp-2);
+}
+
+/* ── Field (label + input + value) ──────────────────────────────────── */
+
+.ctrl-field {
+  display:     flex;
+  align-items: center;
+  gap:         var(--sp-2);
+  flex-shrink: 0;
+}
+
+.ctrl-field--bpm .ctrl-slider {
+  width: 90px;
+}
+
+/* ── Label ───────────────────────────────────────────────────────────── */
+
+.ctrl-label {
+  font-size:      var(--size-hud);
+  letter-spacing: var(--tracking-hud);
+  text-transform: uppercase;
+  color:          var(--text-dim);
+  white-space:    nowrap;
+  user-select:    none;
+}
+
+/* ── Value readout ───────────────────────────────────────────────────── */
+
+.ctrl-value {
+  font-size:  var(--size-xs);
+  color:      var(--cyan);
+  min-width:  38px;
+  text-align: right;
+}
+
+/* ── Slider ──────────────────────────────────────────────────────────── */
+
+.ctrl-slider {
+  -webkit-appearance: none;
+  appearance:  none;
+  height:      3px;
+  width:       72px;
+  background:  var(--border);
+  outline:     none;
+  cursor:      pointer;
+  border-radius: 0;
+}
+
+.ctrl-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance:  none;
+  width:  10px;
+  height: 10px;
+  background:     var(--cyan);
+  cursor:         pointer;
+  border-radius:  0;
+  box-shadow:     0 0 6px var(--glow-cyan);
+}
+
+.ctrl-slider::-moz-range-thumb {
+  width:      10px;
+  height:     10px;
+  background: var(--cyan);
+  cursor:     pointer;
+  border:     none;
+  border-radius: 0;
+}
+
+/* ── Select ──────────────────────────────────────────────────────────── */
+
+.ctrl-select {
+  -webkit-appearance: none;
+  appearance:  none;
+  background:  var(--fill);
+  border:      var(--stroke) solid var(--border);
+  color:       var(--cyan);
+  font-family: var(--font-mono);
+  font-size:   var(--size-xs);
+  letter-spacing: var(--tracking-wide);
+  padding:     var(--sp-1) var(--sp-3) var(--sp-1) var(--sp-2);
+  cursor:      pointer;
+  outline:     none;
+  border-radius: 0;
+}
+
+.ctrl-select:focus {
+  border-color: var(--border-bright);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+
+.ctrl-btn {
+  background:     var(--fill);
+  border:         var(--stroke) solid var(--border);
+  color:          var(--text-dim);
+  font-size:      var(--size-hud);
+  letter-spacing: var(--tracking-hud);
+  text-transform: uppercase;
+  padding:        var(--sp-1) var(--sp-3);
+  transition:     color 0.15s, border-color 0.15s, background 0.15s;
+  border-radius: 0;
+}
+
+.ctrl-btn:hover {
+  border-color: var(--border-bright);
+  color:        var(--cyan);
+}
+
+/* Play/Stop: larger + accented */
+.ctrl-btn--play {
+  font-size:    var(--size-xs);
+  padding:      var(--sp-2) var(--sp-4);
+  border-color: rgba(0, 229, 255, 0.40);
+  color:        var(--cyan);
+  flex-shrink:  0;
+}
+
+.ctrl-btn--play.is-active {
+  background:   rgba(0, 229, 255, 0.08);
+  border-color: var(--cyan);
+  box-shadow:   0 0 8px var(--glow-cyan);
+}
+
+/* Seed buttons */
+.ctrl-btn--seed {
+  font-size: var(--size-hud);
+  padding:   2px var(--sp-2);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .ctrl-row {
+    gap: var(--sp-2);
+  }
+  .ctrl-slider {
+    width: 54px;
+  }
+}
