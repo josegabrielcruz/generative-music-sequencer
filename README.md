@@ -2,8 +2,6 @@
 
 A generative music sequencer powered by Conway's Game of Life. Cells evolve according to cellular automaton rules — when the playhead passes a live cell, it plays a note. Watch the patterns grow, mutate, and die back as the music composes itself.
 
-**[Live Demo](https://josegabrielcruz.github.io/generative-music-sequencer)**
-
 ---
 
 ## What It Does
