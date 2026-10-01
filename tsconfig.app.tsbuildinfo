@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.ts","./src/components/controls/index.tsx","./src/components/grid/index.tsx","./src/hooks/usesequencer.ts","./src/utils/ca.ts","./src/utils/scales.ts"],"version":"5.9.3"}

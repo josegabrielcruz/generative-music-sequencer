@@ -14,7 +14,8 @@ function createSynth(type: string, volume: number): Tone.PolySynth {
   const limiter = new Tone.Limiter(-3).toDestination()
 
   const synth = new Tone.PolySynth(Tone.Synth, {
-    oscillator: { type: oscType },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    oscillator: { type: oscType as any },
     envelope:   { attack: 0.01, decay: 0.12, sustain: 0.25, release: 1.4 },
     volume,
   })
